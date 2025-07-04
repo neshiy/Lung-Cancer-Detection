@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lung Cancer Prediction</h1>
+        <div class="form-container">
+            <h2>Patient Information</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="GENDER">Gender:</label>
+                    <select id="GENDER" name="GENDER">
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="AGE">Age:</label>
+                    <input type="number" id="AGE" name="AGE" min="0" max="120" required>
+                </div>
+                <div class="form-group">
+                    <label for="SMOKING">Smoking:</label>
+                    <select id="SMOKING" name="SMOKING">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="YELLOW_FINGERS">Yellow Fingers:</label>
+                    <select id="YELLOW_FINGERS" name="YELLOW_FINGERS">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ANXIETY">Anxiety:</label>
+                    <select id="ANXIETY" name="ANXIETY">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="PEER_PRESSURE">Peer Pressure:</label>
+                    <select id="PEER_PRESSURE" name="PEER_PRESSURE">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="CHRONIC DISEASE">Chronic Disease:</label>
+                    <select id="CHRONIC DISEASE" name="CHRONIC DISEASE">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="FATIGUE ">Fatigue:</label>
+                    <select id="FATIGUE " name="FATIGUE">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ALLERGY ">Allergy:</label>
+                    <select id="ALLERGY " name="ALLERGY">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="WHEEZING">Wheezing:</label>
+                    <select id="WHEEZING" name="WHEEZING">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ALCOHOL CONSUMING">Alcohol Consuming:</label>
+                    <select id="ALCOHOL CONSUMING" name="ALCOHOL CONSUMING">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="COUGHING">Coughing:</label>
+                    <select id="COUGHING" name="COUGHING">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="SHORTNESS OF BREATH">Shortness of Breath:</label>
+                    <select id="SHORTNESS OF BREATH" name="SHORTNESS OF BREATH">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="SWALLOWING DIFFICULTY">Swallowing Difficulty:</label>
+                    <select id="SWALLOWING DIFFICULTY" name="SWALLOWING DIFFICULTY">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="CHEST PAIN">Chest Pain:</label>
+                    <select id="CHEST PAIN" name="CHEST PAIN">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload CT Image (JPG/PNG):</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+                <div id="image-preview"></div>
+            </div>
+            <button id="predict-btn">Predict</button>
+        </div>
+        <div id="result" class="result-container">
+            <h2>Prediction Results</h2>
+            <p id="rf-result">According to above mention details: <span>Waiting...</span></p>
+            <p id="dl-result">According to above mention CT image: <span>Waiting...</span></p>
+            <p id="error" class="error"></p>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
